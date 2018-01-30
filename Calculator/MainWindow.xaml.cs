@@ -142,20 +142,36 @@ namespace WpfApp1
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
             num2 = Int32.Parse(ans.Text);
-            switch (operations) {
-            case "+": answer = num1 + num2;
-                break;
-            case "-": answer = num1 - num2;
+            switch (operations)
+            {
+                case "+":
+                    answer = num1 + num2;
+                    ans.Text = answer.ToString();
                     break;
-            case "*": answer = num1 * num2;
+                case "-":
+                    answer = num1 - num2;
+                    ans.Text = answer.ToString();
                     break;
-            case "/": answer = num1 / num2;
+                case "*":
+                    answer = num1 * num2;
+                    ans.Text = answer.ToString();
                     break;
-
+                case "/":
+                    if (num2 == 0)
+                    {
+                        ans.Text = "ERROR";
+                        break;
+                    }
+                    else
+                    {
+                        answer = num1 / num2;
+                        ans.Text = answer.ToString();
+                        break;
+                    }
             }
             num1 = 0;
             num2 = 0;
-            ans.Text = answer.ToString();
+
         }
 
         private void Button_Click_10(object sender, RoutedEventArgs e)
