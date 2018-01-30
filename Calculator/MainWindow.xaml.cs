@@ -20,8 +20,8 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        int num1;
-        int num2;
+        double num1;
+        double num2;
         String operations;
         double answer;
 
